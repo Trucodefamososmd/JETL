@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juventud Bet El</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #6a0dad, #4b0082);
+      color: white;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      padding: 50px 20px 70px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      text-shadow: 0 6px 25px rgba(0,0,0,0.45);
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      font-weight: 500;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+
+    .emocion {
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin-bottom: 30px;
+    }
+
+    .contador {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+
+    .bloque {
+      background: rgba(255,255,255,0.18);
+      border-radius: 22px;
+      padding: 22px 28px;
+      min-width: 100px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+    }
+
+    .bloque span {
+      font-size: 2.5rem;
+      font-weight: 900;
+      display: block;
+    }
+
+    .bloque small {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .botones {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin: 0 auto 70px;
+      max-width: 900px;
+    }
+
+    .botones button {
+      background: rgba(255,255,255,0.96);
+      color: #5b00cc;
+      border: none;
+      border-radius: 26px;
+      padding: 34px 20px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      cursor: pointer;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+
+      box-shadow: 0 16px 40px rgba(0,0,0,0.28);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .botones button span {
+      font-size: 2.2rem;
+    }
+
+    .botones button:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 26px 55px rgba(0,0,0,0.4);
+    }
+
+    .botones button:active {
+      transform: translateY(-3px);
+    }
+
+    .horarios {
+      max-width: 650px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.18);
+      border-radius: 28px;
+      padding: 32px 36px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 14px 35px rgba(0,0,0,0.3);
+    }
+
+    .horarios h3 {
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+      font-weight: 900;
+    }
+
+    .horarios p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.8rem; }
+      h2 { font-size: 1.4rem; }
+      .emocion { font-size: 1.8rem; }
+      .botones { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Juventud Bet El</h1>
+    <h2>Mucho más que un sábado</h2>
+
+    <div class="emocion">🔥 Vuelven los grupos 🔥</div>
+
+    <div class="contador">
+      <div class="bloque"><span id="dias">00</span><small>Días</small></div>
+      <div class="bloque"><span id="horas">00</span><small>Horas</small></div>
+      <div class="bloque"><span id="minutos">00</span><small>Min</small></div>
+      <div class="bloque"><span id="segundos">00</span><small>Seg</small></div>
+    </div>
+
+    <div class="botones">
+      <button onclick="location.href='Fotos.html'"><span>📸</span>Fotos</button>
+      <button onclick="location.href='News.html'"><span>📰</span>News</button>
+      <button onclick="location.href='Act.html'"><span>🗓</span>Actividades</button>
+      <button onclick="location.href='Insc.html'"><span>📝</span>Inscripciones</button>
+      <button onclick="location.href='Merch.html'"><span>🛍</span>Merch</button>
+      <button onclick="location.href='Redes.html'"><span>📱</span>Redes sociales</button>
+    </div>
+
+    <div class="horarios">
+      <h3>Horarios</h3>
+      <p>
+        <strong>Gan (2 a 5 años)</strong> y <strong>Pre (6 a 11 años)</strong><br>
+        15:30hs a 19:00hs
+      </p>
+      <br>
+      <p>
+        <strong>Ramah (12 a 16 años)</strong><br>
+        18:00hs a 21:00hs
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const objetivo = new Date("2026-03-07T15:30:00");
+
+    function actualizarContador() {
+      const ahora = new Date();
+      const diff = objetivo - ahora;
+      if (diff <= 0) return;
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / (1000 * 60)) % 60);
+      const segundos = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("dias").textContent = dias;
+      document.getElementById("horas").textContent = horas.toString().padStart(2, "0");
+      document.getElementById("minutos").textContent = minutos.toString().padStart(2, "0");
+      document.getElementById("segundos").textContent = segundos.toString().padStart(2, "0");
+    }
+
+    actualizarContador();
+    setInterval(actualizarContador, 1000);
+  </script>
+
+</body>
+</html>

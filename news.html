@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Newsletter</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+   background: linear-gradient(180deg, #6a0dad, #4b0082);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      font-size: 46px;
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    /* BOTONES */
+    .btn {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      margin: 14px auto;
+      padding: 16px;
+      border-radius: 18px;
+      background: white;
+      color: #5a189a;
+      font-size: 17px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .principal {
+      font-size: 19px;
+      padding: 18px;
+      margin-bottom: 26px;
+    }
+
+    /* SUBTÍTULO LINDO */
+    .subtitulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+
+    /* BOTONES DE GRUPOS */
+    .grupos {
+      margin-bottom: 40px;
+    }
+
+    /* VOLVER */
+    .volver a {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      backdrop-filter: blur(6px);
+      transition: background 0.2s ease;
+    }
+
+    .volver a:hover {
+      background: rgba(255,255,255,0.35);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- TITULO -->
+    <h1>Newsletter</h1>
+
+    <!-- INFO SABADO -->
+    <a href="infosabado.html" class="btn principal">
+      Información de este sábado 7/3
+    </a>
+
+    <!-- SUBTITULO -->
+    <div class="subtitulo">
+      Enterate de todo lo que pasó el último sábado en Juventud Bet El!
+    </div>
+
+    <!-- BOTONES -->
+    <div class="grupos">
+      <a href="newsgan.html" class="btn">Gan</a>
+      <a href="newspre.html" class="btn">Pre</a>
+      <a href="newsramah.html" class="btn">Ramah</a>
+    </div>
+
+    <!-- VOLVER -->
+    <div class="volver">
+      <a href="index.html">Volver al inicio</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

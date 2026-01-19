@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotos de Gan – Juventud Bet El</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #6a0dad, #4b0082);
+      color: white;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      padding: 60px 20px 80px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+      text-shadow: 0 6px 25px rgba(0,0,0,0.45);
+    }
+
+    .aclaracion {
+      max-width: 700px;
+      margin: 0 auto 50px;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      background: rgba(255,255,255,0.18);
+      padding: 20px 26px;
+      border-radius: 22px;
+      backdrop-filter: blur(6px);
+    }
+
+    /* SLIDER */
+    .slider {
+      position: relative;
+      max-width: 100%;
+      margin: 0 auto 50px;
+      background: rgba(0,0,0,0.25);
+      border-radius: 26px;
+      padding: 20px;
+    }
+
+    .slider img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain; /* CLAVE: no corta la foto */
+      border-radius: 20px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .flecha {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.9);
+      color: #5b00cc;
+      border: none;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      font-size: 1.8rem;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+      transition: transform 0.2s ease;
+    }
+
+    .flecha:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .flecha.izq {
+      left: -28px;
+    }
+
+    .flecha.der {
+      right: -28px;
+    }
+
+    .vacio {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      margin: 80px 0;
+    }
+
+    /* VOLVER */
+    .volver {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .volver button {
+      background: rgba(255,255,255,0.18);
+      color: white;
+      border: 2px solid rgba(255,255,255,0.45);
+      border-radius: 30px;
+      padding: 18px 44px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+
+    .volver button:hover {
+      background: rgba(255,255,255,0.35);
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
+      .flecha.izq {
+        left: 10px;
+      }
+
+      .flecha.der {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Fotos de Gan!</h1>
+
+    <div class="aclaracion">
+      Guardá las fotos que más te gusten 💜<br>
+      Todos los viernes se eliminan las fotos para que, después de cada sábado,
+      encuentres nuevas imágenes de cada semana.
+    </div>
+
+    <div id="vacio" class="vacio" style="display:none;">
+      Todavía no hay fotos.
+    </div>
+
+    <div id="slider" class="slider" style="display:none;">
+      <button class="flecha izq" onclick="anterior()">‹</button>
+      <img id="imagenActual" src="" alt="Foto Gan">
+      <button class="flecha der" onclick="siguiente()">›</button>
+    </div>
+
+    <div class="volver">
+      <button onclick="location.href='fotos.html'">Volver</button>
+    </div>
+  </div>
+
+  <script>
+    const fotos = [
+    //  "foto1.webp",
+      // "foto2.webp"
+      // "foto3.webp"
+    ];
+
+    const slider = document.getElementById("slider");
+    const vacio = document.getElementById("vacio");
+    const imagen = document.getElementById("imagenActual");
+
+    let indice = 0;
+
+    if (fotos.length === 0) {
+      vacio.style.display = "block";
+    } else {
+      slider.style.display = "block";
+      imagen.src = "FOTOS GAN/" + fotos[indice];
+    }
+
+    function siguiente() {
+      indice = (indice + 1) % fotos.length;
+      imagen.src = "FOTOS GAN/" + fotos[indice];
+    }
+
+    function anterior() {
+      indice = (indice - 1 + fotos.length) % fotos.length;
+      imagen.src = "FOTOS GAN/" + fotos[indice];
+    }
+  </script>
+
+</body>
+</html>
